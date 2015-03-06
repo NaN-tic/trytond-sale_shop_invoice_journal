@@ -2,13 +2,16 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 from trytond.model import fields
+from trytond.pyson import Eval
 from trytond.pool import PoolMeta
 
-__all__ = ['SaleShop']
+__all__ = ['Journal']
 __metaclass__ = PoolMeta
 
 
-class SaleShop:
-    __name__ = 'sale.shop'
-    journal = fields.Many2One('account.journal', 'Account Journal',
-        domain=[('type', '=', 'revenue')])
+class Journal:
+    __name__ = 'account.journal'
+    shops = fields.One2Many('sale.shop', 'journal', 'Shops',
+            states={
+                'invisible': Eval('type') != 'revenue',
+            }, depends=['type'])

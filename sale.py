@@ -10,7 +10,8 @@ __metaclass__ = PoolMeta
 
 class Sale:
     __name__ = 'sale.sale'
-    journal = fields.Many2One('account.journal', 'Account Journal')
+    journal = fields.Many2One('account.journal', 'Account Journal',
+        domain=[('type', '=', 'revenue')])
 
     def _get_invoice_sale(self, invoice_type):
         invoice = super(Sale, self)._get_invoice_sale(invoice_type)
