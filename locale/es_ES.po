@@ -2,6 +2,10 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "field:account.journal,shops:"
+msgid "Shops"
+msgstr "Tiendas"
+
 msgctxt "field:sale.sale,journal:"
 msgid "Account Journal"
 msgstr "Diario contable"
@@ -9,3 +13,7 @@ msgstr "Diario contable"
 msgctxt "field:sale.shop,journal:"
 msgid "Account Journal"
 msgstr "Diario contable"
+
+msgctxt "view:account.journal:"
+msgid "Shops"
+msgstr "Tiendas"
