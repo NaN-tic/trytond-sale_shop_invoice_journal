@@ -22,7 +22,15 @@ class Sale:
 
     @staticmethod
     def default_journal():
-        Journal = Pool().get('account.journal')
+        pool = Pool()
+        Journal = pool.get('account.journal')
+        User = pool.get('res.user')
+        user = Transaction().user
+        user = User(user)
+        shop = user.shop
+        if shop and shop.journal:
+            return shop.journal.id
+
         journals = Journal.search([
                 ('type', '=', 'revenue'),
                 ('sequences', '=', None),
