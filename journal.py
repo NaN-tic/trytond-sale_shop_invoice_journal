@@ -15,3 +15,10 @@ class Journal:
             states={
                 'invisible': Eval('type') != 'revenue',
             }, depends=['type'])
+
+    @classmethod
+    def view_attributes(cls):
+        return super(Journal, cls).view_attributes() + [
+            ('//page[@id="shops"]', 'states', {
+                    'invisible': Eval('type') != 'revenue',
+                    })]
