@@ -6,10 +6,10 @@ from trytond.pyson import Eval
 from trytond.pool import PoolMeta
 
 __all__ = ['Journal']
-__metaclass__ = PoolMeta
 
 
 class Journal:
+    __metaclass__ = PoolMeta
     __name__ = 'account.journal'
     shops = fields.One2Many('sale.shop', 'journal', 'Shops',
             states={
