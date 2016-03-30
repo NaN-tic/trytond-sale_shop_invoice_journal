@@ -10,8 +10,8 @@ class Sale:
     __metaclass__ = PoolMeta
     __name__ = 'sale.sale'
 
-    def _get_invoice_sale(self, invoice_type):
-        invoice = super(Sale, self)._get_invoice_sale(invoice_type)
+    def _get_invoice_sale(self):
+        invoice = super(Sale, self)._get_invoice_sale()
         journal = self.shop and self.shop.journal or False
         if journal:
             invoice.journal = journal
