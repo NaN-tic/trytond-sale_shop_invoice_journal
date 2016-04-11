@@ -4,7 +4,7 @@ msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:account.journal,shops:"
 msgid "Shops"
-msgstr "Tendes"
+msgstr "Botigues"
 
 msgctxt "field:sale.sale,journal:"
 msgid "Account Journal"
@@ -16,4 +16,4 @@ msgstr "Diari comptable"
 
 msgctxt "view:account.journal:"
 msgid "Shops"
-msgstr "Tendes"
+msgstr "Botigues"
