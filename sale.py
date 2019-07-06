@@ -6,13 +6,12 @@ from trytond.pool import PoolMeta
 __all__ = ['Sale']
 
 
-class Sale:
-    __metaclass__ = PoolMeta
+class Sale(metaclass=PoolMeta):
     __name__ = 'sale.sale'
 
     def _get_invoice_sale(self):
         invoice = super(Sale, self)._get_invoice_sale()
-        journal = self.shop and self.shop.journal or False
+        journal = self.shop and self.shop.journal
         if journal:
             invoice.journal = journal
         return invoice
